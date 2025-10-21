@@ -19,3 +19,6 @@ base-sepolia = "https://base-sepolia.drpc.org"
 
 [etherscan]
 base-sepolia = { key = "${ETHERSCAN_API_KEY}" }
+
+[lint]
+lint_on_build = false
