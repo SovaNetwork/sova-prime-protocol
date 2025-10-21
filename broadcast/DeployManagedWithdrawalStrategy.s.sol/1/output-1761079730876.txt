@@ -1,0 +1,56 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) ✗ forge script script/DeployManagedWithdrawalStrategy.s.sol:DeployManagedWithdrawalStrategyScript --rpc-url https://ethereum-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  Using existing implementation at: 0x15C93f922644B357DD1DDE3FCEfeEE032420d605
+  Asset not registered. Registering asset with 8 decimals
+  Asset registered successfully
+  Deploying strategy with parameters:
+    Token Name: Sova Prime Bitcoin
+    Token Symbol: spBTC
+    Asset: 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+    Manager: 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06
+  Strategy successfully deployed
+  
+Deployed Strategy:
+  Strategy Implementation: 0x15C93f922644B357DD1DDE3FCEfeEE032420d605
+  Cloned Strategy: 0x959d377008F6cCF7f94dA67cA6AA3f7dEf541B0F
+  Strategy Token: 0xA93eADB5E7a1359F1CD68Da666043D5f1940d23A
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 1
+
+Estimated gas price: 0.185492366 gwei
+
+Estimated total gas used for script: 3986695
+
+Estimated amount required: 0.00073950148807037 ETH
+
+==========================
+
+##### mainnet
+✅  [Success] Hash: 0x351eb15ead0d32953c5c54a1d2c1fea1901bcbcac53668b79d9983fd6c72ca4a
+Block: 23628410
+Paid: 0.00026138582609802 ETH (2832180 gas * 0.092291389 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x2e6b1b72ad94f2acb62ce42bb5179ca4986a960114e0cb5c57b1e6d0d0600db0
+Block: 23628410
+Paid: 0.000004994440807124 ETH (54116 gas * 0.092291389 gwei)
+
+✅ Sequence #1 on mainnet | Total Paid: 0.000266380266905144 ETH (2886296 gas * avg 0.092291389 gwei)
+                                                                                                                                                                                                                                                                                                     
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployManagedWithdrawalStrategy.s.sol/1/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployManagedWithdrawalStrategy.s.sol/1/run-latest.json

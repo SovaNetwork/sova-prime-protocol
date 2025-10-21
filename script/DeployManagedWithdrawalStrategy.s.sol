@@ -16,29 +16,28 @@ import {ManagedWithdrawReportedStrategy} from "../src/strategy/ManagedWithdrawRW
 contract DeployManagedWithdrawalStrategyScript is Script {
     // Deployed contracts from previous scripts
     Registry public registry;
-    MockERC20 public usdToken;
     PriceOracleReporter public priceOracle;
 
     // Implementation and clone addresses
     address public strategyImplementation;
     address public strategy;
     address public token;
+    address public btcToken;
 
     function setUp() public {
         // Parse addresses from environment variables or use defaults
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x7184439dE8801d7914bd9C3DA73403AA4C9CD484));
-        // address usdTokenAddress = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
-        address usdTokenAddress = vm.envOr("TOKEN_ADDRESS", address(0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf)); // cbBTC on base mainnet
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0xd8Cf422eF5FD837C6Bb5e339D5d7eD601e604E2B));
+        btcToken = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
+        // btcToken = vm.envOr("TOKEN_ADDRESS", address(0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf)); // cbBTC on base mainnet
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xc9500d6a369e1d0fec48F8423c21585668882610));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0x196C99DCe891165eb6FEE4c4fE4a545f3d15132F));
 
         // Initialize contract references
         registry = Registry(registryAddress);
-        usdToken = MockERC20(usdTokenAddress);
         priceOracle = PriceOracleReporter(priceOracleAddress);
 
         // Check if implementation address is provided
-        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0xe36cA831DF7DDD2b8955718f5f66BbB8cA5F343D));
+        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0x15C93f922644B357DD1DDE3FCEfeEE032420d605));
     }
 
     function run() public {
@@ -79,9 +78,9 @@ contract DeployManagedWithdrawalStrategyScript is Script {
         uint8 assetDecimals = uint8(vm.envOr("ASSET_DECIMALS", uint256(8)));
 
         // Check if asset is registered, if not, register it
-        if (registry.allowedAssets(address(usdToken)) == 0) {
+        if (registry.allowedAssets(address(btcToken)) == 0) {
             console.log("Asset not registered. Registering asset with", assetDecimals, "decimals");
-            registry.setAsset(address(usdToken), assetDecimals);
+            registry.setAsset(address(btcToken), assetDecimals);
             console.log("Asset registered successfully");
         } else {
             console.log("Asset already registered");
@@ -93,12 +92,12 @@ contract DeployManagedWithdrawalStrategyScript is Script {
         console.log("Deploying strategy with parameters:");
         console.log("  Token Name:", tokenName);
         console.log("  Token Symbol:", tokenSymbol);
-        console.log("  Asset:", address(usdToken));
+        console.log("  Asset:", address(btcToken));
         console.log("  Manager:", deployer);
 
         // Deploy strategy through registry
         (strategy, token) =
-            registry.deploy(strategyImplementation, tokenName, tokenSymbol, address(usdToken), deployer, initData);
+            registry.deploy(strategyImplementation, tokenName, tokenSymbol, address(btcToken), deployer, initData);
 
         console.log("Strategy successfully deployed");
     }
