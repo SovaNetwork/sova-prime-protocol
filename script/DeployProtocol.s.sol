@@ -153,6 +153,6 @@ contract DeployProtocolScript is Script {
         console.log("Price Oracle Reporter:", address(priceOracle));
         console.log("ReportedStrategy Implementation:", address(reportedStrategyImplementation));
         // console.log("GatedMintReportedStrategy Implementation:", address(gatedMintStrategyImplementation));
-        console.log("ManagedWithdrawReportedStrategy Implementation:", address(btcVaultStrategyImplementation));
+        console.log("BtcVaultStrategyImplementation Implementation:", address(btcVaultStrategyImplementation));
     }
 }

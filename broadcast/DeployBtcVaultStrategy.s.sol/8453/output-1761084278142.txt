@@ -1,0 +1,54 @@
+➜  sova-prime-protocol git:(oct-2025-deployment-btcvault) ✗ forge script script/DeployBtcVaultStrategy.s.sol:DeployBtcVaultStrategyScript --rpc-url wss://base-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  Using existing BtcVaultStrategy implementation at: 0x3b408ECD5e3a62af47b5C976B608e326df1a05BA
+  
+=== Deploying BtcVaultStrategy Clone ===
+  SovaBTC already registered as allowed asset
+  Deploying with parameters:
+    Vault Name: Sova Prime SOVA
+    Vault Symbol: spSOVA
+    Asset (sovaBTC): 0xA06c38E864cdF486dC650858101224B1e5aA1a90
+    Manager: 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06
+    Price Oracle: 0xDe01983a12bc440aCE843c6FFd2B7a5A7Bb38c0d
+  Strategy deployed at: 0x0D449B388785CF8bcb2a13D5A204Dc77700FaD07
+  Vault token deployed at: 0xD9Aa136e9E85dECbE392c50fE1EEAee2D0B1A843
+  
+=== Deployment Summary ===
+  SovaBTC Token:            0xA06c38E864cdF486dC650858101224B1e5aA1a90
+  Strategy Implementation:  0x3b408ECD5e3a62af47b5C976B608e326df1a05BA
+  Strategy Clone:           0x0D449B388785CF8bcb2a13D5A204Dc77700FaD07
+  Vault Token:              0xD9Aa136e9E85dECbE392c50fE1EEAee2D0B1A843
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 8453
+
+Estimated gas price: 0.009043928 gwei
+
+Estimated total gas used for script: 4133379
+
+Estimated amount required: 0.000037381982072712 ETH
+
+==========================
+
+##### base
+✅  [Success] Hash: 0x5871dd1def636f10348a1dc14f703f0bad491c62960122d60a1368b77cec1c95
+Block: 37147465
+Paid: 0.000014157428403825 ETH (2826243 gas * 0.005009275 gwei)
+
+✅ Sequence #1 on base | Total Paid: 0.000014157428403825 ETH (2826243 gas * avg 0.005009275 gwei)
+                                                                                                                                                                                                                                                                                                    
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployBtcVaultStrategy.s.sol/8453/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployBtcVaultStrategy.s.sol/8453/run-latest.json

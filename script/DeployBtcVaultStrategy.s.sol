@@ -18,7 +18,7 @@ contract DeployBtcVaultStrategyScript is Script {
 
     Registry public registry;
     PriceOracleReporter public priceOracle;
-    address public sovaBTC = 0xA06c38E864cdF486dC650858101224B1e5aA1a90;
+    address public sovaBTC = 0x070Ec152b3ab4c192B9957fd3bCF630128A253FE;
 
     /*//////////////////////////////////////////////////////////////
                         DEPLOYMENT RESULTS
@@ -30,15 +30,15 @@ contract DeployBtcVaultStrategyScript is Script {
 
     function setUp() public {
         // Load configuration from environment variables
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x046C73420dE4c1A0D134c70800Cd9D62C9A70Dea));
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0xaA40F4CD310811Dc3eAd9547D57bB21084Bff1ba));
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xDe01983a12bc440aCE843c6FFd2B7a5A7Bb38c0d));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xF92DdF03d3F5ab598Eefd4BB3754a38286b3Ec04));
 
         registry = Registry(registryAddress);
         priceOracle = PriceOracleReporter(priceOracleAddress);
 
         // Check if implementation address is provided
-        strategyImplementation = vm.envOr("BTC_VAULT_IMPL", address(0));
+        strategyImplementation = vm.envOr("BTC_VAULT_IMPL", address(0x5031E588f1A0cF06E12abaFe493fC9878196F066));
     }
 
     function run() public {

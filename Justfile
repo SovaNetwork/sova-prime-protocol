@@ -2,16 +2,16 @@
 
 # Global constants for verification
 verifier := "etherscan"
-etherscan_api_key := "your_etherscan_api_key_here"
+etherscan_api_key := "974M8F2BDI1U88P8VAHWUYZD3VRPVXNG4Q"
 
 # Chain-specific settings
 # Ethereum mainnet
-rpc_url := "https://ethereum-rpc.publicnode.com"
-verifier_url := "https://api.etherscan.io/v2/api?chainid=1"
+# rpc_url := "https://ethereum-rpc.publicnode.com"
+# verifier_url := "https://api.etherscan.io/v2/api?chainid=1"
 
 # Base mainnet
-# rpc_url := "wss://base-rpc.publicnode.com"
-# verifier_url := "https://api.etherscan.io/v2/api?chainid=8453"
+rpc_url := "wss://base-rpc.publicnode.com"
+verifier_url := "https://api.etherscan.io/v2/api?chainid=8453"
 
 # Default recipe
 default:

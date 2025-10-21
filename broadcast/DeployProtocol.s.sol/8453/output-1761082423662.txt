@@ -22,7 +22,7 @@ Deployed contracts:
   KYC Rules Hook: 0x030aaeC4689B3fF237778968639880f884b44330
   Price Oracle Reporter: 0xDe01983a12bc440aCE843c6FFd2B7a5A7Bb38c0d
   ReportedStrategy Implementation: 0xa1dFc6DbEA7F87E40Fc693dd7C6A72A6622bD7c4
-  ManagedWithdrawReportedStrategy Implementation: 0x3b408ECD5e3a62af47b5C976B608e326df1a05BA
+  BtcVaultStrategyImplementation Implementation: 0x3b408ECD5e3a62af47b5C976B608e326df1a05BA
 
 ## Setting up 1 EVM.
 
