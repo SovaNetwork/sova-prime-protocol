@@ -35,7 +35,6 @@ contract BtcVaultStrategy is ManagedWithdrawReportedStrategy {
     /// @notice Deploy a new BtcVaultToken for this strategy
     function _deployToken(string calldata name_, string calldata symbol_, address asset_, uint8 /* assetDecimals_ */)
         internal
-        virtual
         override
         returns (address)
     {
@@ -78,16 +77,6 @@ contract BtcVaultStrategy is ManagedWithdrawReportedStrategy {
         asset.safeApprove(sToken, amount);
     }
 
-    /// @notice Check if an asset is supported
-    function isSupportedAsset(address token) external view returns (bool) {
-        return supportedAssets[token];
-    }
-
-    /// @notice Get list of all supported collateral tokens
-    function getSupportedCollaterals() external view returns (address[] memory) {
-        return collateralTokens;
-    }
-
     /// @notice Get total collateral assets value
     function totalCollateralAssets() external view returns (uint256) {
         return CollateralViewLib.totalCollateralAssets(collateralTokens);
@@ -115,7 +104,7 @@ contract BtcVaultStrategy is ManagedWithdrawReportedStrategy {
      * @notice Calculate the EIP-712 domain separator with correct contract name
      * @return The domain separator
      */
-    function _domainSeparator() internal view virtual override returns (bytes32) {
+    function _domainSeparator() internal view override returns (bytes32) {
         return keccak256(
             abi.encode(
                 EIP712_DOMAIN_TYPEHASH,

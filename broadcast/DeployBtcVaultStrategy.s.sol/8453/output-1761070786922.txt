@@ -1,0 +1,88 @@
+➜  sova-prime-protocol git:(oct-2025-deployment-btcvault) ✗ forge script script/DeployBtcVaultStrategy.s.sol:DeployBtcVaultStrategyScript --rpc-url wss://base-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  === Deploying BtcVaultStrategy Implementation ===
+  Implementation deployed at: 0x510D875173AcFc9cDdB55B5aFeF2903ad44B810F
+  Registered in registry
+
+=== Deploying BtcVaultStrategy Clone ===
+  Registering sovaBTC as allowed asset (8 decimals)
+  Deploying with parameters:
+    Vault Name: Sova Prime SOVA
+    Vault Symbol: spSOVA
+    Asset (sovaBTC): 0xA06c38E864cdF486dC650858101224B1e5aA1a90
+    Manager: 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06
+    Price Oracle: 0xc9500d6a369e1d0fec48F8423c21585668882610
+  Strategy deployed at: 0xB445B90C4d21ACE4f6d4A7d8C684f8249241F3b3
+  Vault token deployed at: 0x753160b977080C678f52Ed88B133f6BeFa49b7FD
+
+=== Deployment Summary ===
+  SovaBTC Token:            0xA06c38E864cdF486dC650858101224B1e5aA1a90
+  Strategy Implementation:  0x510D875173AcFc9cDdB55B5aFeF2903ad44B810F
+  Strategy Clone:           0xB445B90C4d21ACE4f6d4A7d8C684f8249241F3b3
+  Vault Token:              0x753160b977080C678f52Ed88B133f6BeFa49b7FD
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 8453
+
+Estimated gas price: 0.023182308 gwei
+
+Estimated total gas used for script: 12445991
+
+Estimated amount required: 0.000288526796727228 ETH
+
+==========================
+
+##### base
+✅  [Success] Hash: 0x3e805cebe2f01e7fd14f9c43dae7c8ebd5a42c7be9a1450345e7f16e882b0ef9
+Block: 37140719
+Paid: 0.000007919308639155 ETH (660133 gas * 0.011996535 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xeae6b6fbe55c3645280ffe80d274a3a52d5bad14594c5202b6a31730bd6f4650
+Block: 37140719
+Paid: 0.000002814087197625 ETH (234575 gas * 0.011996535 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xc827fe5c877a043c84a7a26762da9ce1e4b388411c428d1a2f7a36f759cec292
+Block: 37140719
+Paid: 0.000033905123068005 ETH (2826243 gas * 0.011996535 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x5aecd2653554270c3a1539f360a7522425614ddd6fdcd9a6da0608192e4cb16d
+Contract Address: 0x510D875173AcFc9cDdB55B5aFeF2903ad44B810F
+Block: 37140719
+Paid: 0.000063924100584645 ETH (5328547 gas * 0.011996535 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xf1ccf26fe32f9ff2476c4ea411eb05cb08dfc4676971addf8762f343f630a615
+Block: 37140719
+Paid: 0.00000065088400296 ETH (54256 gas * 0.011996535 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x95d306f6cf79634f1ff846656724d272e89d8db83ea9048ac104f47214ca606a
+Block: 37140719
+Paid: 0.00000064920448806 ETH (54116 gas * 0.011996535 gwei)
+
+✅ Sequence #1 on base | Total Paid: 0.00010986270798045 ETH (9157870 gas * avg 0.011996535 gwei)
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployBtcVaultStrategy.s.sol/8453/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployBtcVaultStrategy.s.sol/8453/run-latest.json

@@ -1,0 +1,52 @@
+➜  sova-prime-protocol git:(oct-2025-deployment-btcvault) ✗ forge script script/DeploySovaBTC.s.sol:DeploySovaBTCScript --rpc-url https://ethereum-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  === Deploying SovaBTC ===
+  Deployer: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+  Owner: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+  Mint Manager: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+  Burn Manager: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+
+=== Deployment Summary ===
+  SovaBTC deployed at: 0x070Ec152b3ab4c192B9957fd3bCF630128A253FE
+    Name: Sova Bitcoin V1
+    Symbol: sovabtc
+    Decimals: 8
+    Owner: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    Mint Manager: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    Burn Manager: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 1
+
+Estimated gas price: 0.784121597 gwei
+
+Estimated total gas used for script: 1548705
+
+Estimated amount required: 0.001214373037881885 ETH
+
+==========================
+
+##### mainnet
+✅  [Success] Hash: 0xbee84c9026698e22707a51e4edaa653bc6659f85ac0a9b0a3783d3e6d069ba8f
+Contract Address: 0x070Ec152b3ab4c192B9957fd3bCF630128A253FE
+Block: 23627571
+Paid: 0.0004766267167416 ETH (1191312 gas * 0.40008555 gwei)
+
+✅ Sequence #1 on mainnet | Total Paid: 0.0004766267167416 ETH (1191312 gas * avg 0.40008555 gwei)
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeploySovaBTC.s.sol/1/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeploySovaBTC.s.sol/1/run-latest.json
