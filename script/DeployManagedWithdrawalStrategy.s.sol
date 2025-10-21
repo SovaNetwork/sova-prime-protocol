@@ -26,10 +26,11 @@ contract DeployManagedWithdrawalStrategyScript is Script {
 
     function setUp() public {
         // Parse addresses from environment variables or use defaults
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x9D9f34369AaC65f1506D57a0Ce57757C2821429f));
-        address usdTokenAddress = vm.envOr("USD_TOKEN_ADDRESS", address(0x0864c69458072126424029192f0250a123C6a10C));
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x7184439dE8801d7914bd9C3DA73403AA4C9CD484));
+        // address usdTokenAddress = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
+        address usdTokenAddress = vm.envOr("TOKEN_ADDRESS", address(0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf)); // cbBTC on base mainnet
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0x42A54c50e941f438d85bDdf4216666fB6876aB18));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xc9500d6a369e1d0fec48F8423c21585668882610));
 
         // Initialize contract references
         registry = Registry(registryAddress);
@@ -37,7 +38,7 @@ contract DeployManagedWithdrawalStrategyScript is Script {
         priceOracle = PriceOracleReporter(priceOracleAddress);
 
         // Check if implementation address is provided
-        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0));
+        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0xe36cA831DF7DDD2b8955718f5f66BbB8cA5F343D));
     }
 
     function run() public {
@@ -71,8 +72,20 @@ contract DeployManagedWithdrawalStrategyScript is Script {
 
     function deployStrategy(address deployer) internal {
         // Get token parameters from environment or use defaults
-        string memory tokenName = vm.envOr("TOKEN_NAME", string("Fountfi USD Token"));
-        string memory tokenSymbol = vm.envOr("TOKEN_SYMBOL", string("fUSDC"));
+        string memory tokenName = vm.envOr("TOKEN_NAME", string("Sova Prime Bitcoin"));
+        string memory tokenSymbol = vm.envOr("TOKEN_SYMBOL", string("spBTC"));
+
+        // Get asset decimals from environment or use default for WBTC (8 decimals)
+        uint8 assetDecimals = uint8(vm.envOr("ASSET_DECIMALS", uint256(8)));
+
+        // Check if asset is registered, if not, register it
+        if (registry.allowedAssets(address(usdToken)) == 0) {
+            console.log("Asset not registered. Registering asset with", assetDecimals, "decimals");
+            registry.setAsset(address(usdToken), assetDecimals);
+            console.log("Asset registered successfully");
+        } else {
+            console.log("Asset already registered");
+        }
 
         // Encode initialization data for the strategy (reporter address)
         bytes memory initData = abi.encode(address(priceOracle));

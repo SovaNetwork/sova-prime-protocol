@@ -1,0 +1,236 @@
+➜  sova-prime-protocol git:(base-oct-2025-deployment) ✗ forge script script/DeployProtocol.s.sol:DeployProtocolScript --rpc-url https://ethereum-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  RoleManager deployed and roles configured.
+  Mock USD Token deployed and minted to managers.
+  Registry deployed.
+  KYC Rules Hook deployed.
+  Managers allowed in KYC rules.
+  Price Oracle Reporter deployed.
+  ReportedStrategy implementation deployed.
+  ManagedWithdrawReportedStrategy implementation deployed.
+  Registry configured with strategy implementations.
+
+Deployed contracts:
+  Role Manager: 0xBD57A2aD2853c7f3871745b7F2E7Eb53180CC0c2
+  Mock USD Token: 0xFD634a8429A5DDf7AaaA28Cf29Baa8eBbF30F18c
+  Registry: 0xB7F916899f6e4C7d78233537eC9167a1Fb251DB8
+  Conduit: 0xa31C1b6dEd2582AaBc25B1f8f67CA2b6B0015CC5
+  KYC Rules Hook: 0x7184439dE8801d7914bd9C3DA73403AA4C9CD484
+  Price Oracle Reporter: 0x19458287C8fF48Bcb183C4624649492FF4Bf607b
+  ReportedStrategy Implementation: 0xD67487Ab141ef692ac93407A8C7e3b716f48c68b
+  ManagedWithdrawReportedStrategy Implementation: 0xc9500d6a369e1d0fec48F8423c21585668882610
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 1
+
+Estimated gas price: 0.209217884 gwei
+
+Estimated total gas used for script: 19374060
+
+Estimated amount required: 0.00405339983768904 ETH
+
+==========================
+
+##### mainnet
+✅  [Success] Hash: 0x6547712ac18bda3f9d153e653a817953caf800b4c88bcc4109f9bfa3e745062f
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x3bff9351b0f1973093e3f68aca61456c4c1446ab543a751c1b7751a5ac470129
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xd4a8b34303309e75d3b96f9b8800230418d70d03141de4b7dfcc71b0339172dc
+Block: 23621278
+Paid: 0.000005249063117167 ETH (49979 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x8c224c1ad78102d9f923a5cbe93403edceb51e69141666b3bb52bd3da44782e5
+Contract Address: 0xBD57A2aD2853c7f3871745b7F2E7Eb53180CC0c2
+Block: 23621278
+Paid: 0.000078206513852212 ETH (744644 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x6500611e9484f7ffc18b82b7c5c128bf633a726004e2c499992ec0ddf8814550
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x90ce58c10624cbbc04ef3a08679355b1a2031385631cb14c9ca5ad2db7768aad
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xf8ec71309d7f9bdd45b09fd52ff76e136d895aafe915184eb512fc7c49934dfe
+Block: 23621278
+Paid: 0.000005249063117167 ETH (49979 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xc655a611a9f7fbcfba15933a64994116ea3375619f87b45e5fdc1526d27a8cb8
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xed0c52349afc0f971bd6706c80108e8912a2d6edea973f2c0c0cffc8661cba33
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xe1627125ed25274c2c18b62f52314def43922b2e6d90e4eccd7f24bbc94404f6
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x0461005bbe1df86a00d5c513bb8ce9cdccfe11cbdde1df5331cbcf3458ce601b
+Block: 23621278
+Paid: 0.000007163885717703 ETH (68211 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x2c6b1c8f42c9b1dc9433d3e1ace41fd52ddf26c7018bdad87690703c6a163fbc
+Block: 23621278
+Paid: 0.000004862884820646 ETH (46302 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xf20dc42550f92983d389e8cfc6d3b1322df7db8f1d15b06ce5a0b779ce41607f
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xea70fdebad27df62e88475e5346c7640b0920c41cd7a25c288f35e7e21afb157
+Contract Address: 0xFD634a8429A5DDf7AaaA28Cf29Baa8eBbF30F18c
+Block: 23621278
+Paid: 0.000089595255249586 ETH (853082 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x25cc8ca68d0de01be5a3bb9361d8d04647a7ed40d38c5a5f25e30827c7c66b49
+Block: 23621278
+Paid: 0.000005367951839403 ETH (51111 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xeb49764bd8016bc48ae3f079f71309e7c7124a1c4d3b1736bd7e59b4153115e1
+Block: 23621278
+Paid: 0.000005683553085268 ETH (54116 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x5961024ad986fe5bcf5edaaf5db73a8b63e1ef7708f13771974df7c90d97aa6b
+Block: 23621278
+Paid: 0.000003453129238867 ETH (32879 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xa8bec849030a119af3827f24203e2fb9e91c9260d7c1fc72b5d003a47cf5b3a6
+Contract Address: 0x7184439dE8801d7914bd9C3DA73403AA4C9CD484
+Block: 23621278
+Paid: 0.00012365372340901 ETH (1177370 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xf9d18f007fcdd7530da16f5fd86a0a9325ec0f8c83f766f7dc7c8f24ec03832d
+Block: 23621278
+Paid: 0.000005367951839403 ETH (51111 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x91bc252ae36f95541b0542dca29f443c8a8791777e036e683507492fad70b8d2
+Contract Address: 0xB7F916899f6e4C7d78233537eC9167a1Fb251DB8
+Block: 23621278
+Paid: 0.00014910872306302 ETH (1419740 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x2cc835e1a57dd8b39c5c1095fc19e48e297b59dafc7ad772e630309b02a1b9ec
+Contract Address: 0x19458287C8fF48Bcb183C4624649492FF4Bf607b
+Block: 23621278
+Paid: 0.000095503247556955 ETH (909335 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x4781932a7f11e7c9f2099965ff9493e36a58357e5e7de0466f700414f6521f9e
+Block: 23621278
+Paid: 0.000005022208311487 ETH (47819 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xcfcfb4a06b154b68597f672f34fbf6e3a8a4ed80a2ec0ecd0a5a0a76949a8bd2
+Contract Address: 0xc9500d6a369e1d0fec48F8423c21585668882610
+Block: 23621278
+Paid: 0.000515568295752524 ETH (4908988 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x70a8781fbf6ab9d1a5b6acb0e2a08729d60c4fb746e956726bc2a026be2dddb4
+Block: 23621278
+Paid: 0.000005916709413328 ETH (56336 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x2026a06eb399c6b5969d76ce1efc172ed5d18119aa6a8439f7bec73596418489
+Contract Address: 0xD67487Ab141ef692ac93407A8C7e3b716f48c68b
+Block: 23621278
+Paid: 0.00039504768927085 ETH (3761450 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0xefac95bac4954faf81172b2be7d4190d50e28bc58a1440df0cfbe91daeb474cf
+Block: 23621278
+Paid: 0.000005692480241973 ETH (54201 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x755ef6fff7d54c88a014402540a2db803cc0861e9d9bd04346bb79c6f937fdfa
+Block: 23621278
+Paid: 0.000005916709413328 ETH (56336 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x3947a124341f1d59f7a1ffda24a24a5bbd54da532f0e04fb435a8556e00b972b
+Block: 23621278
+Paid: 0.000005698256637488 ETH (54256 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x28d0b1852ce4e93ca78582056270e78a59480dbabfdd16366ed049014a11f24b
+Block: 23621278
+Paid: 0.000005916709413328 ETH (56336 gas * 0.105025373 gwei)
+
+
+##### mainnet
+✅  [Success] Hash: 0x6e2f29a149490f3c8553bb3629be0a609f7063931687f8bc3a04da31a3c387ff
+Block: 23621278
+Paid: 0.000005698256637488 ETH (54256 gas * 0.105025373 gwei)
+
+✅ Sequence #1 on mainnet | Total Paid: 0.001556567294909137 ETH (14820869 gas * avg 0.105025373 gwei)
+
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployProtocol.s.sol/1/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployProtocol.s.sol/1/run-latest.json

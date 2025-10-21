@@ -1,10 +1,17 @@
-# Justfile for Fountfi Foundry Project
+#!/usr/bin/env bash
 
 # Global constants for verification
-rpc_url := "https://testnet-rpc.sova.io/"
 verifier := "etherscan"
-verifier_url := "https://api.etherscan.io/v2/api?chainid=84532&module=contract&action=verifysourcecode"
-etherscan_api_key := "{{ETHERSCAN_API_KEY}}"
+etherscan_api_key := "your_etherscan_api_key_here"
+
+# Chain-specific settings
+# Ethereum mainnet
+rpc_url := "https://ethereum-rpc.publicnode.com"
+verifier_url := "https://api.etherscan.io/v2/api?chainid=1"
+
+# Base mainnet
+# rpc_url := "wss://base-rpc.publicnode.com"
+# verifier_url := "https://api.etherscan.io/v2/api?chainid=8453"
 
 # Default recipe
 default:
@@ -107,30 +114,28 @@ verify deployment_file="":
 
         # Process each transaction with additionalContracts
         jq -c '.transactions[] | select(.additionalContracts != null and .additionalContracts != [])' "$LATEST_DEPLOYMENT" | while read -r tx; do
-            parent_function=$(echo "$tx" | jq -r '.function')
-
             # Get only the CREATE transactions from additionalContracts array
             create_contracts=$(echo "$tx" | jq -c '.additionalContracts[] | select(.transactionType == "CREATE")')
 
-            # Process each CREATE transaction based on its position
+            # Process each CREATE transaction
             position=0
             echo "$create_contracts" | while read -r contract_info; do
                 address=$(echo "$contract_info" | jq -r '.address')
 
-                # Determine contract name and path based on position and function
+                # Try to get the contract name directly from the JSON
+                json_contract_name=$(echo "$contract_info" | jq -r '.contractName // empty')
+
+                # Determine contract name and path
                 contract_name=""
                 contract_path=""
 
-                # Try to infer contract name by searching for implementations
-                if [[ "$parent_function" == *"deploy"* ]]; then
-                    for name in "DirectDepositStrategy" "DirectDepositRWA" "ManagedWithdrawRWA" "ReportedStrategy" "GatedMintReportedStrategy" "ManagedWithdrawReportedStrategy"; do
-                            potential_path=$(find_contract_path "$name")
-                            if [ -n "$potential_path" ]; then
-                                contract_name="$name"
-                                contract_path="$potential_path"
-                                break
-                            fi
-                        done
+                # First, try to use the contract name from the JSON if available
+                if [ -n "$json_contract_name" ] && [ "$json_contract_name" != "null" ]; then
+                    potential_path=$(find_contract_path "$json_contract_name")
+                    if [ -n "$potential_path" ]; then
+                        contract_name="$json_contract_name"
+                        contract_path="$potential_path"
+                    fi
                 fi
 
                 # If we found a contract name and path, verify the contract
@@ -178,8 +183,8 @@ snapshot:
     forge snapshot
 
 # Deploy contracts (example)
-deploy network private_key:
-    forge script script/DeployProtocol.s.sol:DeployProtocolScript --rpc-url {{network}} --private-key {{private_key}}
+deploy network network_url private_key:
+    forge script script/DeployProtocol.s.sol:DeployProtocolScript --rpc-url {{network_url}} --private-key {{private_key}}
 
 # Clean build artifacts
 clean:

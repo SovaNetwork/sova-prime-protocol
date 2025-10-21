@@ -14,8 +14,8 @@ import {Conduit} from "../src/conduit/Conduit.sol";
 
 contract DeployProtocolScript is Script {
     // Management addresses
-    address public constant MANAGER_1 = 0x0670faf0016E1bf591fEd8e0322689E894104F81;
-    address public constant MANAGER_2 = 0xc67DD6f32147285A9e4D92774055cE3Dba5Ae8b6;
+    address public constant MANAGER_1 = 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06;
+    address public constant MANAGER_2 = 0xe578129e06FCFa3E24E4A1C36e31600211f9d75E;
 
     // Storage for deployed contract addresses
     RoleManager public roleManager;
@@ -88,8 +88,6 @@ contract DeployProtocolScript is Script {
         kycRulesHook.allow(deployer);
         kycRulesHook.allow(MANAGER_1);
         kycRulesHook.allow(MANAGER_2);
-        kycRulesHook.allow(0x75BbFf2206b6Ad50786Ee3ce8A81eDb72f3e381b);
-        kycRulesHook.allow(0x30C157C9749Df07f04e8170F5a529C89EF0a4639);
         console.log("Managers allowed in KYC rules.");
 
         // Deploy Price Oracle Reporter with initial price of 1 USD
@@ -118,6 +116,9 @@ contract DeployProtocolScript is Script {
     }
 
     function grantRolesToManagers() internal {
+        // Grant KYC_OPERATOR to deployer for deployment
+        roleManager.grantRole(roleManager.owner(), roleManager.KYC_OPERATOR());
+
         // Protocol admins
         roleManager.grantRole(MANAGER_1, roleManager.PROTOCOL_ADMIN());
         roleManager.grantRole(MANAGER_2, roleManager.PROTOCOL_ADMIN());
