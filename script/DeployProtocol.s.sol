@@ -9,6 +9,7 @@ import {PriceOracleReporter} from "../src/reporter/PriceOracleReporter.sol";
 import {ReportedStrategy} from "../src/strategy/ReportedStrategy.sol";
 import {GatedMintReportedStrategy} from "../src/strategy/GatedMintRWAStrategy.sol";
 import {ManagedWithdrawReportedStrategy} from "../src/strategy/ManagedWithdrawRWAStrategy.sol";
+import {BtcVaultStrategy} from "../src/strategy/BtcVaultStrategy.sol";
 import {RoleManager} from "../src/auth/RoleManager.sol";
 import {Conduit} from "../src/conduit/Conduit.sol";
 
@@ -19,13 +20,14 @@ contract DeployProtocolScript is Script {
 
     // Storage for deployed contract addresses
     RoleManager public roleManager;
-    MockERC20 public usdToken;
+    MockERC20 public mockBtcToken;
     Registry public registry;
     KycRulesHook public kycRulesHook;
     PriceOracleReporter public priceOracle;
     ReportedStrategy public reportedStrategyImplementation;
     // GatedMintReportedStrategy public gatedMintStrategyImplementation;
-    ManagedWithdrawReportedStrategy public managedWithdrawStrategyImplementation;
+    // ManagedWithdrawReportedStrategy public managedWithdrawStrategyImplementation;
+    BtcVaultStrategy public btcVaultStrategyImplementation;
     Conduit public conduit;
 
     function setUp() public {}
@@ -56,12 +58,12 @@ contract DeployProtocolScript is Script {
         console.log("RoleManager deployed and roles configured.");
 
         // Deploy mock USD token
-        usdToken = new MockERC20("Mock USD", "USDC", 6);
+        mockBtcToken = new MockERC20("Mock BTC", "WBTC", 8);
 
         // Mint tokens to various addresses for testing
-        usdToken.mint(deployer, 50_000_000_000_000_000_000); // 50MM USDC with 6 decimals
-        usdToken.mint(MANAGER_1, 50_000_000_000_000_000_000); // 50MM USDC with 6 decimals
-        usdToken.mint(MANAGER_2, 50_000_000_000_000_000_000); // 50MM USDC with 6 decimals
+        mockBtcToken.mint(deployer, 50_000_000_000); // 500 BTC
+        mockBtcToken.mint(MANAGER_1, 50_000_000_000); // 500 BTC
+        mockBtcToken.mint(MANAGER_2, 50_000_000_000); // 500 BTC
 
         console.log("Mock USD Token deployed and minted to managers.");
 
@@ -75,7 +77,7 @@ contract DeployProtocolScript is Script {
         roleManager.initializeRegistry(address(registry));
 
         // Allow USD token as an asset
-        registry.setAsset(address(usdToken), 6);
+        registry.setAsset(address(mockBtcToken), 6);
 
         // Deploy KYC Rules Hook with role manager
         kycRulesHook = new KycRulesHook(address(roleManager));
@@ -91,8 +93,8 @@ contract DeployProtocolScript is Script {
         console.log("Managers allowed in KYC rules.");
 
         // Deploy Price Oracle Reporter with initial price of 1 USD
-        uint256 initialPrice = 1_000_000; // $1.00 with 6 decimals
-        priceOracle = new PriceOracleReporter(initialPrice, MANAGER_1, 100, 3600); // 1% max change per hour
+        uint256 initialPrice = 100_000_000; // 1 BTC with 8 decimals
+        priceOracle = new PriceOracleReporter(initialPrice, MANAGER_1, 500, 3600); // 5% max change per hour
         priceOracle.setUpdater(MANAGER_2, true);
         console.log("Price Oracle Reporter deployed.");
 
@@ -104,14 +106,18 @@ contract DeployProtocolScript is Script {
         // gatedMintStrategyImplementation = new GatedMintReportedStrategy();
         // console.log("GatedMintReportedStrategy implementation deployed.");
 
+        // // Deploy ManagedWithdrawReportedStrategy implementation to be used as a template
+        // managedWithdrawStrategyImplementation = new ManagedWithdrawReportedStrategy();
+        // console.log("ManagedWithdrawReportedStrategy implementation deployed.");
+
         // Deploy ManagedWithdrawReportedStrategy implementation to be used as a template
-        managedWithdrawStrategyImplementation = new ManagedWithdrawReportedStrategy();
-        console.log("ManagedWithdrawReportedStrategy implementation deployed.");
+        btcVaultStrategyImplementation = new BtcVaultStrategy();
+        console.log("BtcVaultStrategyImplementation implementation deployed.");
 
         // Register both strategy implementations in the registry
         registry.setStrategy(address(reportedStrategyImplementation), true);
         // registry.setStrategy(address(gatedMintStrategyImplementation), true);
-        registry.setStrategy(address(managedWithdrawStrategyImplementation), true);
+        registry.setStrategy(address(btcVaultStrategyImplementation), true);
         console.log("Registry configured with strategy implementations.");
     }
 
@@ -140,13 +146,13 @@ contract DeployProtocolScript is Script {
         // Log deployed contract addresses
         console.log("\nDeployed contracts:");
         console.log("Role Manager:", address(roleManager));
-        console.log("Mock USD Token:", address(usdToken));
+        console.log("Mock BTC Token:", address(mockBtcToken));
         console.log("Registry:", address(registry));
         console.log("Conduit:", address(conduit));
         console.log("KYC Rules Hook:", address(kycRulesHook));
         console.log("Price Oracle Reporter:", address(priceOracle));
         console.log("ReportedStrategy Implementation:", address(reportedStrategyImplementation));
         // console.log("GatedMintReportedStrategy Implementation:", address(gatedMintStrategyImplementation));
-        console.log("ManagedWithdrawReportedStrategy Implementation:", address(managedWithdrawStrategyImplementation));
+        console.log("ManagedWithdrawReportedStrategy Implementation:", address(btcVaultStrategyImplementation));
     }
 }

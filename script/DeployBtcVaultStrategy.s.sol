@@ -30,9 +30,9 @@ contract DeployBtcVaultStrategyScript is Script {
 
     function setUp() public {
         // Load configuration from environment variables
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x7184439dE8801d7914bd9C3DA73403AA4C9CD484));
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x046C73420dE4c1A0D134c70800Cd9D62C9A70Dea));
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xc9500d6a369e1d0fec48F8423c21585668882610));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xDe01983a12bc440aCE843c6FFd2B7a5A7Bb38c0d));
 
         registry = Registry(registryAddress);
         priceOracle = PriceOracleReporter(priceOracleAddress);
