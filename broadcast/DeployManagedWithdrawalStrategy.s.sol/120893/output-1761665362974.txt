@@ -1,0 +1,57 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) ✗ forge script script/DeployManagedWithdrawalStrategy.s.sol:DeployManagedWithdrawalStrategyScript --rpc-url https://rpc.testnet.sova.io --chain-id 120893 --private-key 0x847d77ca376fe2925aeccd3843bc0a1a61e8c4348471fdab08f3ee99af4bbc2c --broadcast --slow
+[⠊] Compiling...
+[⠒] Compiling 1 files with Solc 0.8.25
+[⠢] Solc 0.8.25 finished in 2.09s
+Compiler run successful with warnings:
+Warning (9302): Return value of low-level calls not used.
+   --> src/strategy/BasicStrategy.sol:123:9:
+    |
+123 |         to.call{value: address(this).balance}("");
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Script ran successfully.
+
+== Logs ==
+  Using existing implementation at: 0xa59bCb3e6e297C80362FcEb2772fd4E522298EC9
+  Asset already registered
+  Deploying strategy with parameters:
+    Token Name: Mock Sova Prime Bitcoin
+    Token Symbol: mspBTC
+    Asset: 0x5Db496debB227455cE9f482f9E443f1073a55456
+    Manager: 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06
+  Strategy successfully deployed
+  
+Deployed Strategy:
+  Strategy Implementation: 0xa59bCb3e6e297C80362FcEb2772fd4E522298EC9
+  Cloned Strategy: 0xe8C13E09596F88f7Db0FEbb812EdCbD43BA378a1
+  Strategy Token: 0x3b5B1c8D1aCf8e253C06B7a6E77D1Cade71D6b3f
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 120893
+
+Estimated gas price: 0.000000503 gwei
+
+Estimated total gas used for script: 3912047
+
+Estimated amount required: 0.000000001967759641 ETH
+
+==========================
+
+##### 120893
+✅  [Success] Hash: 0xa8499a964195e0e655115f37d5fa47ca17931bbc04072bdc3b79ddbe934d061e
+Block: 900761
+Paid: 0.000000000713727504 ETH (2832252 gas * 0.000000252 gwei)
+
+✅ Sequence #1 on 120893 | Total Paid: 0.000000000713727504 ETH (2832252 gas * avg 0.000000252 gwei)
+                                                                                                                                                                                                                                                                                                                   
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployManagedWithdrawalStrategy.s.sol/120893/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployManagedWithdrawalStrategy.s.sol/120893/run-latest.json

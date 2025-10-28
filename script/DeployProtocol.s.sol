@@ -3,7 +3,7 @@ pragma solidity ^0.8.25;
 
 import "forge-std/Script.sol";
 import {Registry} from "../src/registry/Registry.sol";
-import {MockERC20} from "../src/mocks/MockERC20.sol";
+import {MockERC20WithLimit} from "../src/mocks/MockERC20WithLimit.sol";
 import {KycRulesHook} from "../src/hooks/KycRulesHook.sol";
 import {PriceOracleReporter} from "../src/reporter/PriceOracleReporter.sol";
 import {ReportedStrategy} from "../src/strategy/ReportedStrategy.sol";
@@ -19,7 +19,7 @@ contract DeployProtocolScript is Script {
 
     // Storage for deployed contract addresses
     RoleManager public roleManager;
-    MockERC20 public mockBtcToken;
+    MockERC20WithLimit public mockBtcToken;
     Registry public registry;
     KycRulesHook public kycRulesHook;
     PriceOracleReporter public priceOracle;
@@ -56,12 +56,10 @@ contract DeployProtocolScript is Script {
         console.log("RoleManager deployed and roles configured.");
 
         // Deploy mock USD token
-        mockBtcToken = new MockERC20("Mock BTC", "WBTC", 8);
+        mockBtcToken = new MockERC20WithLimit("Mock BTC", "WBTC", 8);
 
-        // Mint tokens to various addresses for testing
-        mockBtcToken.mint(deployer, 50_000_000_000); // 500 BTC
-        mockBtcToken.mint(MANAGER_1, 50_000_000_000); // 500 BTC
-        mockBtcToken.mint(MANAGER_2, 50_000_000_000); // 500 BTC
+        // Mint tokens to deplopyer for testing
+        mockBtcToken.mint(); // 0.05 BTC
 
         console.log("Mock USD Token deployed and minted to managers.");
 
@@ -74,8 +72,8 @@ contract DeployProtocolScript is Script {
         // Link registry to role manager
         roleManager.initializeRegistry(address(registry));
 
-        // Allow USD token as an asset
-        registry.setAsset(address(mockBtcToken), 6);
+        // Allow token as an asset
+        registry.setAsset(address(mockBtcToken), 8);
 
         // Deploy KYC Rules Hook with role manager
         kycRulesHook = new KycRulesHook(address(roleManager));
@@ -90,9 +88,9 @@ contract DeployProtocolScript is Script {
         kycRulesHook.allow(MANAGER_2);
         console.log("Managers allowed in KYC rules.");
 
-        // Deploy Price Oracle Reporter with initial price of 1 USD
-        uint256 initialPrice = 100_000_000; // 1 BTC with 8 decimals
-        priceOracle = new PriceOracleReporter(initialPrice, MANAGER_1, 500, 3600); // 5% max change per hour
+        // Deploy Price Oracle Reporter with initial price of 1:1 conversion
+        uint256 initialPrice = 1 * 10**18; // 1 BTC with 18 decimals
+        priceOracle = new PriceOracleReporter(initialPrice, MANAGER_1, 100, 3600); // 1% max change per hour
         priceOracle.setUpdater(MANAGER_2, true);
         console.log("Price Oracle Reporter deployed.");
 

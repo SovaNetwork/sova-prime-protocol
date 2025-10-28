@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Global constants for verification
-verifier := "etherscan"
-etherscan_api_key := "your_etherscan_api_key_here"
+verifier := "blockscout"
+etherscan_api_key := "974M8F2BDI1U88P8VAHWUYZD3VRPVXNG4Q"
 
 # Chain-specific settings
 # Ethereum mainnet
-rpc_url := "https://ethereum-rpc.publicnode.com"
-verifier_url := "https://api.etherscan.io/v2/api?chainid=1"
+rpc_url := "https://rpc.testnet.sova.io/"
+verifier_url := "https://explorer.testnet.sova.io/api/"
 
 # Base mainnet
 # rpc_url := "wss://base-rpc.publicnode.com"
@@ -30,6 +30,7 @@ coverage:
 verify deployment_file="":
     #!/bin/bash
     set -euo pipefail
+    export ETHERSCAN_API_KEY="{{etherscan_api_key}}"
 
     # Find the latest deployment file
     if [ -z "{{deployment_file}}" ]; then

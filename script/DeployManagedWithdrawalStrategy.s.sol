@@ -22,22 +22,23 @@ contract DeployManagedWithdrawalStrategyScript is Script {
     address public strategyImplementation;
     address public strategy;
     address public token;
-    address public btcToken;
+    address public mockUsdToken;
 
     function setUp() public {
         // Parse addresses from environment variables or use defaults
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0xd8Cf422eF5FD837C6Bb5e339D5d7eD601e604E2B));
-        btcToken = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x9D6d5891FF579356D2D63655Af05D50A71e4C313));
+        mockUsdToken = vm.envOr("TOKEN_ADDRESS", address(0x5Db496debB227455cE9f482f9E443f1073a55456)); // mockBTC on Sova Sepolia Testnet
+        // btcToken = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
         // btcToken = vm.envOr("TOKEN_ADDRESS", address(0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf)); // cbBTC on base mainnet
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0x196C99DCe891165eb6FEE4c4fE4a545f3d15132F));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0x68dEa18c2CC99c1F1EB92B921fFe34f8330d97CA));
 
         // Initialize contract references
         registry = Registry(registryAddress);
         priceOracle = PriceOracleReporter(priceOracleAddress);
 
         // Check if implementation address is provided
-        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0x15C93f922644B357DD1DDE3FCEfeEE032420d605));
+        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0xa59bCb3e6e297C80362FcEb2772fd4E522298EC9));
     }
 
     function run() public {
@@ -71,16 +72,16 @@ contract DeployManagedWithdrawalStrategyScript is Script {
 
     function deployStrategy(address deployer) internal {
         // Get token parameters from environment or use defaults
-        string memory tokenName = vm.envOr("TOKEN_NAME", string("Sova Prime Bitcoin"));
-        string memory tokenSymbol = vm.envOr("TOKEN_SYMBOL", string("spBTC"));
+        string memory tokenName = vm.envOr("TOKEN_NAME", string("Mock Sova Prime Bitcoin"));
+        string memory tokenSymbol = vm.envOr("TOKEN_SYMBOL", string("mspBTC"));
 
         // Get asset decimals from environment or use default for WBTC (8 decimals)
         uint8 assetDecimals = uint8(vm.envOr("ASSET_DECIMALS", uint256(8)));
 
         // Check if asset is registered, if not, register it
-        if (registry.allowedAssets(address(btcToken)) == 0) {
+        if (registry.allowedAssets(address(mockUsdToken)) == 0) {
             console.log("Asset not registered. Registering asset with", assetDecimals, "decimals");
-            registry.setAsset(address(btcToken), assetDecimals);
+            registry.setAsset(address(mockUsdToken), assetDecimals);
             console.log("Asset registered successfully");
         } else {
             console.log("Asset already registered");
@@ -92,12 +93,12 @@ contract DeployManagedWithdrawalStrategyScript is Script {
         console.log("Deploying strategy with parameters:");
         console.log("  Token Name:", tokenName);
         console.log("  Token Symbol:", tokenSymbol);
-        console.log("  Asset:", address(btcToken));
+        console.log("  Asset:", address(mockUsdToken));
         console.log("  Manager:", deployer);
 
         // Deploy strategy through registry
         (strategy, token) =
-            registry.deploy(strategyImplementation, tokenName, tokenSymbol, address(btcToken), deployer, initData);
+            registry.deploy(strategyImplementation, tokenName, tokenSymbol, address(mockUsdToken), deployer, initData);
 
         console.log("Strategy successfully deployed");
     }
