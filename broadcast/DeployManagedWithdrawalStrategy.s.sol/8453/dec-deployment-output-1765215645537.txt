@@ -1,0 +1,49 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) ✗ forge script script/DeployManagedWithdrawalStrategy.s.sol:DeployManagedWithdrawalStrategyScript --rpc-url wss://base-rpc.publicnode.com --private-key $PRIVATE_KEY --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  Using existing implementation at: 0x52a4D8BBD933d6f51e8f4a7A6b8a853c825A82d1
+  Asset already registered
+  Deploying strategy with parameters:
+    Token Name: Sova Bitcoin Shares
+    Token Symbol: svBTC
+    Asset: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+    Manager: 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06
+  Strategy successfully deployed
+  
+Deployed Strategy:
+  Strategy Implementation: 0x52a4D8BBD933d6f51e8f4a7A6b8a853c825A82d1
+  Cloned Strategy: 0xBe0F717E56FC88C11051717E9e3A1d1E76D4735F
+  Strategy Token: 0xB967F72Bb20618CE8D3d99BDea61AAB8828b8543
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 8453
+
+Estimated gas price: 0.000765465 gwei
+
+Estimated total gas used for script: 3888328
+
+Estimated amount required: 0.00000297637899252 ETH
+
+==========================
+
+##### base
+✅  [Success] Hash: 0x8184b4c6db41a2aacb041c2f6d942cf7d6498c52210da8b95e4a6c133d804cee
+Block: 39213149
+Paid: 0.00000111402286872 ETH (2815080 gas * 0.000395734 gwei)
+
+✅ Sequence #1 on base | Total Paid: 0.00000111402286872 ETH (2815080 gas * avg 0.000395734 gwei)
+                                                                                                                                              
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployManagedWithdrawalStrategy.s.sol/8453/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployManagedWithdrawalStrategy.s.sol/8453/run-latest.json

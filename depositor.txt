@@ -1,0 +1,179 @@
+Fetching deposit details for 33 transactions...                                              
+
+     [1/33] 0x465de00594376d008e5fe91017fce4e346ac3365: 0.00065281 cbBTC → 6528088.09887357 spBTC
+     [2/33] 0xc7cbf4f64fdb0eb40499894eef7c22407bcb31e1: 0.00001400 cbBTC → 139999.74477142 spBTC
+     [3/33] 0xa7449cbbfc1a9233b30041182c049ad925d42c89: 0.00004242 cbBTC → 424199.22665740 spBTC
+     [4/33] 0x384c092e96f042a223778a82e8e09bb2b49ec921: 0.00026551 cbBTC → 2655095.15958996 spBTC
+     [5/33] 0x7013ec3ad66fb8cd09dd172d0ca231d6e6f3baab: 0.00110198 cbBTC → 11019779.91022916 spBTC
+     [6/33] 0xa65fd1d3f9754c7d638faa0fc8fa446a293adeb7: 0.00001354 cbBTC → 135399.75315750 spBTC
+     [7/33] 0x6a0144b150c2ccd8e2d488b103209f6b0a09d7f1: 0.00001393 cbBTC → 139299.74604756 spBTC
+     [8/33] 0x7013ec3ad66fb8cd09dd172d0ca231d6e6f3baab: 0.00005841 cbBTC → 584098.93514990 spBTC
+     [9/33] 0x465de00594376d008e5fe91017fce4e346ac3365: 0.00008327 cbBTC → 832698.48193686 spBTC
+     [10/33] 0xd9b841a0fbc4d68353759d37a2bb87f514f15041: 0.00000542 cbBTC → 54199.90119008 spBTC
+     [11/33] 0x8b04def86136f6d646c680fc5a5721fedcd1422b: 0.00025304 cbBTC → 2530366.12737289 spBTC
+     [12/33] 0x04d165d253cb177e6acaeefbe810ed5bb43ee4ab: 0.00002672 cbBTC → 267196.42318765 spBTC
+     [13/33] 0x465de00594376d008e5fe91017fce4e346ac3365: 0.00002062 cbBTC → 206197.23975035 spBTC
+     [14/33] 0x78a9bc1eaae4f88cb94e2235ac8ce05fb345e841: 0.00000111 cbBTC → 11099.85141236 spBTC
+     [15/33] 0xd6d3b97124f55f2cc246d6237689272c9f35a84d: 0.00050000 cbBTC → 4999755.55831530 spBTC
+     [16/33] 0x3026a15027d1a2b6ea26b6fdfa87a36ad9254787: 0.00000711 cbBTC → 71096.52403924 spBTC
+     [17/33] 0x3026a15027d1a2b6ea26b6fdfa87a36ad9254787: 0.00000010 cbBTC → 999.95111166 spBTC
+     [18/33] 0xb48447a7a99075d3b675463d4c82131f24876763: 0.00000600 cbBTC → 59997.06669978 spBTC
+     [19/33] 0xe4321f0aa947479a2ad94dbff687a9c260c1a70f: 0.00000340 cbBTC → 33998.33779654 spBTC
+     [20/33] 0xb626792a706e62263fe08b828c2f90ad4ef34601: 0.00000010 cbBTC → 999.95111166 spBTC
+     [21/33] 0x803b34733d802f02e84b87a770f8629987339520: 0.00001193 cbBTC → 119294.16762140 spBTC
+     [22/33] 0x836996b0c261673b58fc1d2c7fcc606606fddfd5: 0.00000026 cbBTC → 2599.87289032 spBTC
+     [23/33] 0x371ad3a9cb1b612b3c5a58cd9c59b71d7468ae9a: 0.00000020 cbBTC → 1999.90222333 spBTC
+     [24/33] 0x803b34733d802f02e84b87a770f8629987339520: 0.00000208 cbBTC → 20798.98312259 spBTC
+     [25/33] 0x3d46c17d7ac1db5f662c6014b442251b4f07feba: 0.00000100 cbBTC → 9999.51111663 spBTC
+     [26/33] 0x78a9bc1eaae4f88cb94e2235ac8ce05fb345e841: 0.00001133 cbBTC → 113258.11367489 spBTC
+     [27/33] 0x785a7798379c2b21509d34352d0b80997fd0d7f0: 0.00000960 cbBTC → 95916.16453932 spBTC
+     [28/33] 0x9888c145d491e6d74c9a33e2068cdd368a8af16b: 0.00001998 cbBTC → 102308.07769182 spBTC
+     [29/33] 0x2e78788272cf4086363d09e3531525b8a5d07b90: 0.00009150 cbBTC → 102.39929700 spBTC
+     [30/33] 0x72542833bb793742b8257a5ff6558dcdf7f24d71: 0.00000010 cbBTC → 0.01017380 spBTC
+     [31/33] 0x8fd7b2f90c80e848f1242392f458ea5f57b53570: 0.00000001 cbBTC → 0.00050869 spBTC
+     [32/33] 0x90552ca53592dfa96c887400ddab964b2824ff02: 0.00000168 cbBTC → 0.00050568 spBTC
+     [33/33] 0x04ca5b4ffc26c8c554c83dadfe7a8d2ef9bf5560: 0.00000300 cbBTC → 0.00000300 spBTC
+
+     ======================================================================
+     SUMMARY
+     ======================================================================
+
+     0x7013ec3ad66fb8cd09dd172d0ca231d6e6f3baab
+       Deposits: 2
+       Total deposited: 0.00116039 cbBTC
+       Total shares: 11603878.84537905 spBTC
+
+     0x465de00594376d008e5fe91017fce4e346ac3365
+       Deposits: 3
+       Total deposited: 0.00075670 cbBTC
+       Total shares: 7566983.82056078 spBTC
+
+     0xd6d3b97124f55f2cc246d6237689272c9f35a84d
+       Deposits: 1
+       Total deposited: 0.00050000 cbBTC
+       Total shares: 4999755.55831530 spBTC
+
+     0x384c092e96f042a223778a82e8e09bb2b49ec921
+       Deposits: 1
+       Total deposited: 0.00026551 cbBTC
+       Total shares: 2655095.15958996 spBTC
+
+     0x8b04def86136f6d646c680fc5a5721fedcd1422b
+       Deposits: 1
+       Total deposited: 0.00025304 cbBTC
+       Total shares: 2530366.12737289 spBTC
+
+     0xa7449cbbfc1a9233b30041182c049ad925d42c89
+       Deposits: 1
+       Total deposited: 0.00004242 cbBTC
+       Total shares: 424199.22665740 spBTC
+
+     0x04d165d253cb177e6acaeefbe810ed5bb43ee4ab
+       Deposits: 1
+       Total deposited: 0.00002672 cbBTC
+       Total shares: 267196.42318765 spBTC
+
+     0x803b34733d802f02e84b87a770f8629987339520
+       Deposits: 2
+       Total deposited: 0.00001401 cbBTC
+       Total shares: 140093.15074399 spBTC
+
+     0xc7cbf4f64fdb0eb40499894eef7c22407bcb31e1
+       Deposits: 1
+       Total deposited: 0.00001400 cbBTC
+       Total shares: 139999.74477142 spBTC
+
+     0x6a0144b150c2ccd8e2d488b103209f6b0a09d7f1
+       Deposits: 1
+       Total deposited: 0.00001393 cbBTC
+       Total shares: 139299.74604756 spBTC
+
+     0xa65fd1d3f9754c7d638faa0fc8fa446a293adeb7
+       Deposits: 1
+       Total deposited: 0.00001354 cbBTC
+       Total shares: 135399.75315750 spBTC
+
+     0x78a9bc1eaae4f88cb94e2235ac8ce05fb345e841
+       Deposits: 2
+       Total deposited: 0.00001244 cbBTC
+       Total shares: 124357.96508725 spBTC
+
+     0x9888c145d491e6d74c9a33e2068cdd368a8af16b
+       Deposits: 1
+       Total deposited: 0.00001998 cbBTC
+       Total shares: 102308.07769182 spBTC
+
+     0x785a7798379c2b21509d34352d0b80997fd0d7f0
+       Deposits: 1
+       Total deposited: 0.00000960 cbBTC
+       Total shares: 95916.16453932 spBTC
+
+     0x3026a15027d1a2b6ea26b6fdfa87a36ad9254787
+       Deposits: 2
+       Total deposited: 0.00000721 cbBTC
+       Total shares: 72096.47515091 spBTC
+
+     0xb48447a7a99075d3b675463d4c82131f24876763
+       Deposits: 1
+       Total deposited: 0.00000600 cbBTC
+       Total shares: 59997.06669978 spBTC
+
+     0xd9b841a0fbc4d68353759d37a2bb87f514f15041
+       Deposits: 1
+       Total deposited: 0.00000542 cbBTC
+       Total shares: 54199.90119008 spBTC
+
+     0xe4321f0aa947479a2ad94dbff687a9c260c1a70f
+       Deposits: 1
+       Total deposited: 0.00000340 cbBTC
+       Total shares: 33998.33779654 spBTC
+
+     0x3d46c17d7ac1db5f662c6014b442251b4f07feba
+       Deposits: 1
+       Total deposited: 0.00000100 cbBTC
+       Total shares: 9999.51111663 spBTC
+
+     0x836996b0c261673b58fc1d2c7fcc606606fddfd5
+       Deposits: 1
+       Total deposited: 0.00000026 cbBTC
+       Total shares: 2599.87289032 spBTC
+
+     0x371ad3a9cb1b612b3c5a58cd9c59b71d7468ae9a
+       Deposits: 1
+       Total deposited: 0.00000020 cbBTC
+       Total shares: 1999.90222333 spBTC
+
+     0xb626792a706e62263fe08b828c2f90ad4ef34601
+       Deposits: 1
+       Total deposited: 0.00000010 cbBTC
+       Total shares: 999.95111166 spBTC
+
+     0x2e78788272cf4086363d09e3531525b8a5d07b90
+       Deposits: 1
+       Total deposited: 0.00009150 cbBTC
+       Total shares: 102.39929700 spBTC
+
+     0x72542833bb793742b8257a5ff6558dcdf7f24d71
+       Deposits: 1
+       Total deposited: 0.00000010 cbBTC
+       Total shares: 0.01017380 spBTC
+
+     0x8fd7b2f90c80e848f1242392f458ea5f57b53570
+       Deposits: 1
+       Total deposited: 0.00000001 cbBTC
+       Total shares: 0.00050869 spBTC
+
+     0x90552ca53592dfa96c887400ddab964b2824ff02
+       Deposits: 1
+       Total deposited: 0.00000168 cbBTC
+       Total shares: 0.00050568 spBTC
+
+     0x04ca5b4ffc26c8c554c83dadfe7a8d2ef9bf5560
+       Deposits: 1
+       Total deposited: 0.00000300 cbBTC
+       Total shares: 0.00000300 spBTC
+
+     ======================================================================
+     TOTAL: 27 depositors
+     Total assets: 0.00322216 cbBTC
+     Total shares: 31160843.19176933 spBTC

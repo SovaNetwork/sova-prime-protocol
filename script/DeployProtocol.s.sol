@@ -89,6 +89,7 @@ contract DeployProtocolScript is Script {
         console.log("Managers allowed in KYC rules.");
 
         // Deploy Price Oracle Reporter with initial price of 1:1 conversion
+        // CRITICAL: Price must be in 18 decimals (1e18 = 1.0)
         uint256 initialPrice = 1 * 10**18; // 1 BTC with 18 decimals
         priceOracle = new PriceOracleReporter(initialPrice, MANAGER_1, 100, 3600); // 1% max change per hour
         priceOracle.setUpdater(MANAGER_2, true);

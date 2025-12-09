@@ -92,7 +92,8 @@ contract SimpleRWADeployScript is Script {
         console.log("Managers allowed in KYC rules.");
 
         // Deploy Price Oracle Reporter with initial price of 1 USD
-        uint256 initialPrice = 1_000_000; // $1.00 with 6 decimals
+        // CRITICAL: Price must be in 18 decimals (1e18 = 1.0)
+        uint256 initialPrice = 1 * 10**18; // $1.00 in 18-decimal precision
         priceOracle = new PriceOracleReporter(initialPrice, address(roleManager), 100, 300); // 1% max change per 5 minutes
         console.log("Price Oracle Reporter deployed.");
 
