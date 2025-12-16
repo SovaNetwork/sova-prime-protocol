@@ -26,19 +26,19 @@ contract DeployManagedWithdrawalStrategyScript is Script {
 
     function setUp() public {
         // Parse addresses from environment variables or use defaults
-        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0x127b1f1e7C9a2d626e096EF3Bfd2b3d21C57e162));
+        address registryAddress = vm.envOr("REGISTRY_ADDRESS", address(0xF4B1C6111aD5528840d5744C89e4E832ADB0B888));
         // mockUsdToken = vm.envOr("TOKEN_ADDRESS", address(0x5Db496debB227455cE9f482f9E443f1073a55456)); // mockBTC on Sova Sepolia Testnet
         // btcToken = vm.envOr("TOKEN_ADDRESS", address(0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)); // WBTC on eth mainnet
         btcToken = vm.envOr("TOKEN_ADDRESS", address(0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf)); // cbBTC on base mainnet
         address priceOracleAddress =
-            vm.envOr("PRICE_ORACLE_ADDRESS", address(0xE9078D0E63F82d4eD9e65efB2155e70f88EB03E3));
+            vm.envOr("PRICE_ORACLE_ADDRESS", address(0x3caa9E4A9bB42564f95DC20faE6B8CACE3A0E914));
 
         // Initialize contract references
         registry = Registry(registryAddress);
         priceOracle = PriceOracleReporter(priceOracleAddress);
 
         // Check if implementation address is provided
-        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0x52a4D8BBD933d6f51e8f4a7A6b8a853c825A82d1));
+        strategyImplementation = vm.envOr("MANAGED_WITHDRAW_IMPL", address(0xEaFd681c24AdED31B193573b136d99AAde2872Ff));
     }
 
     function run() public {

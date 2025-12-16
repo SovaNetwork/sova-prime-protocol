@@ -1,0 +1,43 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) PRIVATE_KEY=0x... UPDATER_ADDRESS=0xb60c1a6464c4b571aa3d46667a1ecba53e881821 \
+forge script script/DeployPriceOracle.s.sol:DeployPriceOracleScript --rpc-url https://base-mainnet.g.alchemy.com/v2/MBZh1L4hUtVog1nxfNqHT --private-key 0x...
+
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  PriceOracleReporter deployed:
+    Address: 0x3caa9E4A9bB42564f95DC20faE6B8CACE3A0E914
+    Initial Price: 1000000000000000000
+    Updater: 0xb60C1a6464C4B571aa3D46667A1ECba53e881821
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 8453
+
+Estimated gas price: 0.000784169 gwei
+
+Estimated total gas used for script: 1182182
+
+Estimated amount required: 0.000000927030476758 ETH
+
+==========================
+
+##### base
+✅  [Success] Hash: 0xffd743ae9ee539b6bd36a66c774dc48012732779fa1f3be38231596d81c92c6f
+Contract Address: 0x3caa9E4A9bB42564f95DC20faE6B8CACE3A0E914
+Block: 39388244
+Paid: 0.000000372726619883 ETH (909371 gas * 0.000409873 gwei)
+
+✅ Sequence #1 on base | Total Paid: 0.000000372726619883 ETH (909371 gas * avg 0.000409873 gwei)
+                                                                                                                                              
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/DeployPriceOracle.s.sol/8453/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/DeployPriceOracle.s.sol/8453/run-latest.json

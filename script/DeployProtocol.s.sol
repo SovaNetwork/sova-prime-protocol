@@ -14,8 +14,8 @@ import {Conduit} from "../src/conduit/Conduit.sol";
 
 contract DeployProtocolScript is Script {
     // Management addresses
-    address public constant MANAGER_1 = 0xdf49B0293131eb1386B9BBE0dE894C0aB7439f06;
-    address public constant MANAGER_2 = 0xe578129e06FCFa3E24E4A1C36e31600211f9d75E;
+    address public constant MANAGER_1 = 0x7b1ddf2eaa19bae051bdCf9cf446cB98E8Dc13Df;
+    address public constant MANAGER_2 = 0x189587Cd323613d65B37Af93940E9D3EB04EC274;
 
     // Storage for deployed contract addresses
     RoleManager public roleManager;

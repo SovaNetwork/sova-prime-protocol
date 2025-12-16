@@ -1,0 +1,35 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) ✗ PRIVATE_KEY=0x... forge script script/DeployProtocol.s.sol:DeployProtocolScript --rpc-url wss://base-rpc.publicnode.com --private-key 0x...
+[⠊] Compiling...
+[⠆] Compiling 1 files with Solc 0.8.25
+[⠰] Solc 0.8.25 finished in 2.31s
+Compiler run successful with warnings:
+Warning (9302): Return value of low-level calls not used.
+   --> src/strategy/BasicStrategy.sol:123:9:
+    |
+123 |         to.call{value: address(this).balance}("");
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Script ran successfully.
+
+== Logs ==
+  RoleManager deployed and roles configured.
+  Mock USD Token deployed and minted to managers.
+  Registry deployed.
+  KYC Rules Hook deployed.
+  Managers allowed in KYC rules.
+  Price Oracle Reporter deployed.
+  ReportedStrategy implementation deployed.
+  ManagedWithdrawReportedStrategy implementation deployed.
+  Registry configured with strategy implementations.
+  
+Deployed contracts:
+  Role Manager: 0xf97fC42e1B3c4c570cD0Ebc9f0967fF7C49B4360
+  Mock USD Token: 0xF0904CC44F8185cc8B2BCC67E3066dC662c7233f
+  Registry: 0xF4B1C6111aD5528840d5744C89e4E832ADB0B888
+  Conduit: 0x1894fF3B7d07151b0b8aaBF059Ab4aD28EB6770f
+  KYC Rules Hook: 0x31E2541886b6e2914B395442AEEE299b3D35D110
+  Price Oracle Reporter: 0x3C583928a423184f1Eb395D40E912D75E69490A2 -> NOT USED -> 0x3caa9E4A9bB42564f95DC20faE6B8CACE3A0E914 was used
+  ReportedStrategy Implementation: 0x6AaCF4ca0D6dBd36f94e329b12042BD542e47c6b
+  ManagedWithdrawReportedStrategy Implementation: 0xEaFd681c24AdED31B193573b136d99AAde2872Ff
+
+## Setting up 1 EVM.

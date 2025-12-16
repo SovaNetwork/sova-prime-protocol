@@ -1,0 +1,186 @@
+➜  sova-prime-protocol git:(oct-2025-deployment) ✗ PRIVATE_KEY=0x... forge script script/TransferToMultisig.s.sol:TransferToMultisigScript \
+    --rpc-url https://mainnet.base.org \
+    --private-key 0x... --broadcast --slow
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Logs ==
+  === Transfer to Multisig Script ===
+  Multisig: 0x10A88eeF2dbf31598AAF58a4BD810cBC73E8b802
+  RoleManager: 0xf97fC42e1B3c4c570cD0Ebc9f0967fF7C49B4360
+  Cloned Strategy: 0xc23AE9352739E0AC242Bf0263980769C06a8F52B
+  
+  Pre-flight checks:
+    Current RoleManager owner: 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    Current strategy manager: 0x7b1ddf2eaa19bae051bdCf9cf446cB98E8Dc13Df
+    Current OLD_OWNER roles: 46
+    Current OLD_MANAGER_1 roles: 62
+    Current OLD_MANAGER_2 roles: 62
+    Current MULTISIG roles: 0
+  
+  Step 1: Granting roles to multisig...
+    - Granted PROTOCOL_ADMIN
+    - Granted STRATEGY_ADMIN
+    - Granted RULES_ADMIN
+    - Granted STRATEGY_OPERATOR
+    - Granted KYC_OPERATOR
+  
+  Step 2: Transferring strategy manager...
+    - Strategy manager set to multisig
+  
+  Step 3: Verifying transfers...
+    - All verifications passed
+  
+  Step 4: Revoking roles from old addresses...
+    - Revoked PROTOCOL_ADMIN from 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    - Revoked STRATEGY_ADMIN from 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    - Revoked RULES_ADMIN from 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    - Revoked KYC_OPERATOR from 0x76F2DAD4741CB0f4C8C56361d8cF5E05Bc01Bf28
+    - Revoked PROTOCOL_ADMIN from 0x7b1ddf2eaa19bae051bdCf9cf446cB98E8Dc13Df
+    - Revoked STRATEGY_ADMIN from 0x7b1ddf2eaa19bae051bdCf9cf446cB98E8Dc13Df
+    - Revoked STRATEGY_OPERATOR from 0x7b1ddf2eaa19bae051bdCf9cf446cB98E8Dc13Df
+    - Revoked PROTOCOL_ADMIN from 0x189587Cd323613d65B37Af93940E9D3EB04EC274
+    - Revoked STRATEGY_ADMIN from 0x189587Cd323613d65B37Af93940E9D3EB04EC274
+    - Revoked STRATEGY_OPERATOR from 0x189587Cd323613d65B37Af93940E9D3EB04EC274
+  
+  Step 5: Transferring RoleManager ownership to multisig...
+    - Ownership transferred to multisig
+  
+  Step 6: Final verification...
+    - Old addresses successfully revoked
+    - Ownership successfully transferred
+  
+  === Transfer Complete ===
+  RoleManager owner: 0x10A88eeF2dbf31598AAF58a4BD810cBC73E8b802
+  Multisig roles: 62
+  Strategy manager: 0x10A88eeF2dbf31598AAF58a4BD810cBC73E8b802
+  OLD_OWNER roles: 0
+  OLD_MANAGER_1 roles: 40
+  OLD_MANAGER_2 roles: 40
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 8453
+
+Estimated gas price: 0.005471065 gwei
+
+Estimated total gas used for script: 798048
+
+Estimated amount required: 0.00000436617248112 ETH
+
+==========================
+
+##### base
+✅  [Success] Hash: 0xdb2b1077afaf8b74e1842c7e82cf050760d9b3424006140038fe6eb53907445d
+Block: 39514804
+Paid: 0.000000140948526745 ETH (49979 gas * 0.002820155 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xd783d9903a3df8d9709862cfe9d08968eba1b6421e4ee91f3d7e0b2a94acce60
+Block: 39514805
+Paid: 0.000000094382194368 ETH (32879 gas * 0.002870592 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xce2a4dc6e91451793c90bef6aafaf509f928457ba94ead9566f75b4e4b761af3
+Block: 39514806
+Paid: 0.00000009469546548 ETH (32879 gas * 0.00288012 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x535f75a273bca63052db4824a3f57150b0f72b2bc780a2689978f62933fb3757
+Block: 39514807
+Paid: 0.000000095208871065 ETH (32879 gas * 0.002895735 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x9c3fce451faa420dfb56b496b6668029ecc1f3576ec9eeb1b8bd864f8dcdfd36
+Block: 39514808
+Paid: 0.000000095467102731 ETH (32879 gas * 0.002903589 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x7452f0830c63aa4245f90a96aebc243734440e51de4ebd85a07a43de6fd6c60d
+Block: 39514809
+Paid: 0.000000115612329966 ETH (39606 gas * 0.002919061 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x53a0dd4d3bdf2874b58b14e748f0100007be7ded5dce7d38a5b0cd9db95fdb56
+Block: 39514810
+Paid: 0.00000009561730934 ETH (32830 gas * 0.002912498 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xf658c640dac9f21dbbc52169521c1a79b61c0b829ffb24feb8262d5977b76e0d
+Block: 39514811
+Paid: 0.00000009551103863 ETH (32830 gas * 0.002909261 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x2448b34f61a65d92525fc6cdd695bd47528ab8d1d230492af74ab68b1f25ccdf
+Block: 39514812
+Paid: 0.00000009653109956 ETH (32830 gas * 0.002940332 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xdf57e279672416993a8e3b31ae985dc863306ededc1c0df0a0590f5670133dc0
+Block: 39514813
+Paid: 0.00000008335513749 ETH (28030 gas * 0.002973783 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x36bc1419a58564944cca0f86f0ac957c5a7996e901d670d0829487298627780a
+Block: 39514817
+Paid: 0.00000011153289938 ETH (32830 gas * 0.003397286 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xb2114bdfd538c2d426c12215b841755b5a3de11ac61bbc099e4049a042dbfa43
+Block: 39514818
+Paid: 0.00000011384406572 ETH (32830 gas * 0.003467684 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x46dca5b9ef73a547ac6c72b8e1c815aa0c0a695ef2c269408fb85fae6be74083
+Block: 39514823
+Paid: 0.00000013776459466 ETH (32830 gas * 0.004196302 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x869c9ca0b5194314a01bca04341f23a76642c327f5b7f0aa06f83e552f221f21
+Block: 39514826
+Paid: 0.00000014325639706 ETH (32830 gas * 0.004363582 gwei)
+
+
+##### base
+✅  [Success] Hash: 0x0c36b7cf3ef86b6d96d1f2104121a682336c33dedb532950b53b27a8aac8f437
+Block: 39514827
+Paid: 0.00000014383023263 ETH (32830 gas * 0.004381061 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xb7de9c3de6305659e9fc91c33766925f82b0fb0fc3d160db10518ef024696751
+Block: 39514828
+Paid: 0.00000014455850052 ETH (32830 gas * 0.004403244 gwei)
+
+
+##### base
+✅  [Success] Hash: 0xd6ffb731b8129c5dce18143668a6d60874fa08a3c6dd3af7a579fae2a261aa43
+Block: 39514829
+Paid: 0.00000012539991153 ETH (28569 gas * 0.00438937 gwei)
+
+✅ Sequence #1 on base | Total Paid: 0.000001927515676875 ETH (573170 gas * avg 0.003389626 gwei)
+                                                                                                                                    
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /Users/powvt/sova-prime-protocol/broadcast/TransferToMultisig.s.sol/8453/run-latest.json
+
+Sensitive values saved to: /Users/powvt/sova-prime-protocol/cache/TransferToMultisig.s.sol/8453/run-latest.json
